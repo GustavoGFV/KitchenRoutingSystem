@@ -17,6 +17,7 @@ namespace Kitchen_Routing_System.Dto
         public int? Id { get; set; }
         public int OrderId { get; set; }
         public int EstablishmentId { get; set; }
+        public int POS { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
         public AreaEnum Area { get; set; }

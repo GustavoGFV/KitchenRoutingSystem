@@ -132,6 +132,9 @@
   <data name="OrderIdNull" xml:space="preserve">
     <value>Order number is null.</value>
   </data>
+  <data name="POSInvalid" xml:space="preserve">
+    <value>Point of Sale (POS) invalid.</value>
+  </data>
   <data name="PostError" xml:space="preserve">
     <value>There was an error in the post method.</value>
   </data>

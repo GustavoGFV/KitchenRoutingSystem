@@ -26,6 +26,7 @@ namespace Kitchen_Routing_System.Tests
                 Id = 1,
                 OrderId = 1,
                 EstablishmentId = 1,
+                POS = 1,
                 Name = "Test",
                 Description = "Test",
                 Area = AreaEnum.Drink,

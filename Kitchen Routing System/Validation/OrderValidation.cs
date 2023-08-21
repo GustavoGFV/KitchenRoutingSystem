@@ -13,6 +13,9 @@ namespace Kitchen_Routing_System.Validation
 
             RuleFor(log => log.EstablishmentId).Null().Equal(0)
              .WithMessage(Error.EstablishmentInvalid);
+
+            RuleFor(log => log.POS).Null().Equal(0)
+             .WithMessage(Error.POSInvalid);
         }
     }
 }

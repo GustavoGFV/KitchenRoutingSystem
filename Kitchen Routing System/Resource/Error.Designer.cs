@@ -106,6 +106,15 @@ namespace Kitchen_Routing_System.Resource {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ponto de venda (POS) inválido..
+        /// </summary>
+        public static string POSInvalid {
+            get {
+                return ResourceManager.GetString("POSInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Ocorreu um erro no metodo post..
         /// </summary>
         public static string PostError {
