@@ -1,7 +1,11 @@
 using Kitchen_Routing_System.Interface;
 using Kitchen_Routing_System.Services;
+using Kitchen_Routing_System.Services.Process;
+using Kitchen_Routing_System.Services.Process.AreaProcess;
 using Kitchen_Routing_System.Services.Queue;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Serilog;
+using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 /// </summary>
@@ -16,7 +20,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<ProcessSalad>();
+builder.Services.AddSingleton<ProcessDesert>();
+builder.Services.AddSingleton<ProcessDrink>();
+builder.Services.AddSingleton<ProcessFries>();
+builder.Services.AddSingleton<ProcessGrill>();
 builder.Services.AddSingleton<IOrderQueue, OrderQueue>();
+builder.Services.AddSingleton<IProcessOrder, ProcessOrder>();
 builder.Services.AddHostedService<OrderService>();
 
 Log.Logger = new LoggerConfiguration()
