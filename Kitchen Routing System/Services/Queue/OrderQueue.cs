@@ -16,7 +16,7 @@ namespace Kitchen_Routing_System.Services.Queue
                 //A logica seria de que a cada dia a fila de pedidos reinicia
                 //In case that the order id in the same date and in the same establishment already exists it will throw an exception.
                 //The logic would be that each day the queue of requests restarts
-                if (_queue.Select(s => s.OrderId == kitchenOrder.OrderId &&
+                if (_queue.Count > 0 && _queue.Select(s => s.OrderId == kitchenOrder.OrderId &&
                                        s.CreatedAt.Day == kitchenOrder.CreatedAt.Day &&
                                        s.EstablishmentId == kitchenOrder.EstablishmentId).First())
                     throw new Exception(string.Format(Error.OrderIdExists, kitchenOrder.OrderId));
