@@ -13,6 +13,8 @@ namespace Kitchen_Routing_System.Tests
             // Setup 
             var orderQueue = new OrderQueue();
 
+            List<DescriptionDto> descriptionList = new List<DescriptionDto>();
+            descriptionList.Add(new DescriptionDto { Product = 1, Area = AreaEnum.Desert });
             //Configure the object for the test | Configure o objeto para o teste
             var order = new KitchenOrderDto
             {
@@ -21,8 +23,7 @@ namespace Kitchen_Routing_System.Tests
                 EstablishmentId = 1,
                 POS = 1,
                 Name = "Test",
-                Description = "Test",
-                Area = AreaEnum.Drink,
+                Description= descriptionList,
                 CreatedAt = DateTime.Now,
             };
 
@@ -40,6 +41,8 @@ namespace Kitchen_Routing_System.Tests
             // Setup 
             var orderQueue = new OrderQueue();
 
+            List<DescriptionDto> descriptionList = new List<DescriptionDto>();
+            descriptionList.Add(new DescriptionDto { Product = 1, Area = AreaEnum.Desert });
             //Configure the object for the test | Configure o objeto para o teste
             var order = new KitchenOrderDto
             {
@@ -48,8 +51,7 @@ namespace Kitchen_Routing_System.Tests
                 EstablishmentId = 1,
                 POS = 1,
                 Name = "Test",
-                Description = "Test",
-                Area = AreaEnum.Drink,
+                Description = descriptionList,
                 CreatedAt = DateTime.Now,
             };
 
@@ -66,6 +68,8 @@ namespace Kitchen_Routing_System.Tests
             // Setup
             var orderQueue = new OrderQueue();
 
+            List<DescriptionDto> descriptionList = new List<DescriptionDto>();
+            descriptionList.Add(new DescriptionDto { Product = 1, Area = AreaEnum.Desert });
             //Configure the object for the test | Configure o objeto para o teste
             var order = new KitchenOrderDto
             {
@@ -74,8 +78,7 @@ namespace Kitchen_Routing_System.Tests
                 EstablishmentId = 1,
                 POS = 1,
                 Name = "Test",
-                Description = "Test",
-                Area = AreaEnum.Drink,
+                Description = descriptionList,
                 CreatedAt = DateTime.Now,
             };
             orderQueue.Enqueue(order);

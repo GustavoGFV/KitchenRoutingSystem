@@ -30,37 +30,40 @@ namespace Kitchen_Routing_System.Services.Process
         /// </summary>
         public async Task ProcessOrderAsync(KitchenOrderDto kitchenOrder)
         {
-            switch (kitchenOrder.Area)
+            foreach (var area in kitchenOrder.Description)
             {
-                case AreaEnum.Salad:
-                    {
-                        await _processSalad.ProcessSaladOrder(kitchenOrder);
+                switch (area.Area)
+                {
+                    case AreaEnum.Salad:
+                        {
+                            await _processSalad.ProcessSaladOrder(kitchenOrder);
+                            break;
+                        }
+                    case AreaEnum.Grill:
+                        {
+                            await _processGrill.ProcessGrillOrder(kitchenOrder);
+                            break;
+                        }
+                    case AreaEnum.Desert:
+                        {
+                            await _processDesert.ProcessDesertOrder(kitchenOrder);
+                            break;
+                        }
+                    case AreaEnum.Drink:
+                        {
+                            await _processDrink.ProcessDrinkOrder(kitchenOrder);
+                            break;
+                        }
+                    case AreaEnum.Fries:
+                        {
+                            await _processFries.ProcessFriesOrder(kitchenOrder);
+                            break;
+                        }
+                    default:
+                        _logger.LogWarning(string.Format(Error.UnknownArea, area.Area));
                         break;
-                    }
-                case AreaEnum.Grill:
-                    {
-                        await _processGrill.ProcessGrillOrder(kitchenOrder);
-                        break;
-                    }
-                case AreaEnum.Desert:
-                    {
-                        await _processDesert.ProcessDesertOrder(kitchenOrder);
-                        break;
-                    }
-                case AreaEnum.Drink:
-                    {
-                        await _processDrink.ProcessDrinkOrder(kitchenOrder);
-                        break;
-                    }
-                case AreaEnum.Fries:
-                    {
-                        await _processFries.ProcessFriesOrder(kitchenOrder);
-                        break;
-                    }
-                default:
-                    _logger.LogWarning(string.Format(Error.UnknownArea,kitchenOrder.Area));
-                    break;
-            }
+                }
+            }            
         }
     }
 }

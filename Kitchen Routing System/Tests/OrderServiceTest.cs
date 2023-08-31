@@ -20,6 +20,8 @@ namespace Kitchen_Routing_System.Tests
             var orderQueue = new OrderQueue();
             var processOrder = new Mock<IProcessOrder>();
 
+            List<DescriptionDto> descriptionList = new List<DescriptionDto>();
+            descriptionList.Add(new DescriptionDto { Product = 1, Area = AreaEnum.Desert });
             //Configure the object for the test | Configure o objeto para o teste
             var order = new KitchenOrderDto
             {
@@ -28,8 +30,7 @@ namespace Kitchen_Routing_System.Tests
                 EstablishmentId = 1,
                 POS = 1,
                 Name = "Test",
-                Description = "Test",
-                Area = AreaEnum.Drink,
+                Description = descriptionList,
                 CreatedAt = DateTime.Now,
             };
 
@@ -47,6 +48,8 @@ namespace Kitchen_Routing_System.Tests
             cancellationTokenSource.Cancel(); // Cancel the service after a short delay | Cancela o serviço depois de um breve delay
 
             orderService.StopAsync(cancellationTokenSource.Token);
+
+            processOrder.Verify(x => x.ProcessOrderAsync(order),Times.Exactly(1));
         }
     }
 }

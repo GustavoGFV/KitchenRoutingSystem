@@ -19,8 +19,7 @@ namespace Kitchen_Routing_System.Dto
         public int EstablishmentId { get; set; }
         public int POS { get; set; }
         public string? Name { get; set; }
-        public string? Description { get; set; }
-        public AreaEnum Area { get; set; }
+        public List<DescriptionDto> Description { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }
