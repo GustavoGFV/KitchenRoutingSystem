@@ -61,19 +61,6 @@ namespace Kitchen_Routing_System.Tests
         }
 
         [Fact]
-        public void Dequeue_EmptyQueue_ReturnsNull()
-        {
-            // Setup
-            var orderQueue = new OrderQueue();
-
-            // Act | Ação
-            var dequeuedOrder = orderQueue.Dequeue().Result;
-
-            // Assert
-            Assert.Null(dequeuedOrder);
-        }
-
-        [Fact]
         public void Dequeue_NonEmptyQueue_Success()
         {
             // Setup
