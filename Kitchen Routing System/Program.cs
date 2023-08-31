@@ -32,7 +32,7 @@ builder.Services.AddSingleton<IProcessOrder, ProcessOrder>();
 builder.Services.AddHostedService<OrderService>();
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.File("Storage/app.log")
+    .WriteTo.File("Storage/app.txt")
     .CreateLogger();
 
 builder.Logging.AddSerilog();

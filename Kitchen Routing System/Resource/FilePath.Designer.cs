@@ -61,7 +61,7 @@ namespace Kitchen_Routing_System.Resource {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Storage/app.log.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Storage/app.txt.
         /// </summary>
         public static string File {
             get {

@@ -68,8 +68,13 @@ namespace Kitchen_Routing_System.Controllers
         {
             try
             {
-                string logContent = System.IO.File.ReadAllText(FilePath.File);
-                return Ok(logContent);
+                using (FileStream fileStream = new FileStream(FilePath.File, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        return Ok(reader.ReadToEnd());
+                    }
+                }
             }
             catch (Exception ex)
             {
