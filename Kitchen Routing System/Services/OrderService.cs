@@ -35,6 +35,8 @@ namespace Kitchen_Routing_System.Services
                     ///Previnir gargalo/atraso
                     ///Delay to avoid busy-wait
                     await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
+                    ///Outra opção seria o Thread.Sleep
+                    ///Other option would be Thread.Sleep
                 }
             }
             catch (Exception ex)
