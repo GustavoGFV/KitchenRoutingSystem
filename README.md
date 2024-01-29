@@ -62,7 +62,7 @@ Inicie o servidor localhost
 
 ## Autores
 
-- [@Candidato (Pediram anonimato)](https://www.github.com/)
+- [Gustavo Felipe Vieira]
 
 
 ## Etiquetas
